@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import { Button } from "react-bootstrap/lib/InputGroup";
 
 
 class App extends React.Component {
@@ -52,4 +53,38 @@ handleCitySubmit = async (event) => {
     }
 };
 
+handleCityInput = (event) => {
+    this.setState({
+        city: event.target.value,
+    });
+}
 
+render() {
+
+    return (
+
+        <>
+            <header>
+                <h1>API Data Locations</h1>
+            </header>
+            {this.state.error ? (
+                <p>{this.state.errorMessage}</p>
+            ) : (
+                <ul>{this.state.cityData}</ul>
+            )}
+            <form onSubmit={this.handleCitySubmit}>
+                <label>
+                    Choose City:
+                    <input type="text" onChange={this.handleCityInput} />
+                </label>
+                <Button type="submit">Find Cities</Button>
+            </form>
+
+
+
+        </>
+    )
+
+
+
+}
