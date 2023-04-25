@@ -1,6 +1,6 @@
 import React from "react";
 import axios from 'axios';
-import { Button } from "react-bootstrap/lib/InputGroup";
+import { Button, Card, Form } from "react-bootstrap";
 
 
 class App extends React.Component {
