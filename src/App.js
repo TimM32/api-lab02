@@ -59,7 +59,7 @@ handleCityInput = (event) => {
     });
 };
 
-render() {
+render(); {
 
     return (
 
@@ -94,7 +94,7 @@ render() {
 
 
         </>
-    )
+    );
 }
 
 
