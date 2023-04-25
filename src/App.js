@@ -79,12 +79,29 @@ render() {
                 </label>
                 <Button type="submit">Find Cities</Button>
             </form>
-
+            <Card className="location-cards" id='location'>
+                <Card.body>
+                    <Card.Title>Enjoy {this.state.city}!</Card.Title>
+                    <Card.Text>
+                        <p>Latitude: {this.state.locationLat} , Longitude: {this.state.locationLon} </p>
+                    </Card.Text>
+                    <Card.Img
+                        className="cardImage"
+                        src={this.state.locationMap}
+                    />
+                </Card.body>
+            </Card>
 
 
         </>
-    )
-
+    );
 
 
 }
+
+
+
+
+
+
+export default App;
