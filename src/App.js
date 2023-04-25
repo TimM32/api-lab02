@@ -24,7 +24,7 @@ handleCitySubmit = async (event) => {
 
     try {
 
-        let url = (`https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_KEY_LOCATION}&q=${this.state.city}&format=json`);
+        let url = `https://us1.locationiq.com/v1/search?key=${process.env.REACT_APP_KEY_LOCATION}&q=${this.state.city}&format=json`;
 
         let cityInfo = await axios.get(url);
 
@@ -55,7 +55,7 @@ handleCitySubmit = async (event) => {
 };
 
 handleCityInput = (event) => {
-    console.log("🚀 ~ file: App.js:58 ~ handleCityInput:", handleCityInput)
+    // console.log("🚀 ~ file: App.js:58 ~ handleCityInput:", handleCityInput)
     this.setState({
         city: event.target.value,
     });
