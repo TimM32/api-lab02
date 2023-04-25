@@ -6,6 +6,7 @@ import LatLon from "./LatLon";
 import CitySearch from "./CitySearch";
 import Map from "./Map";
 import axios from "axios";
+console.log(process.env.REACT_APP_LOCATION_KEY);
 
 class Main extends React.Component {
   constructor(props) {
