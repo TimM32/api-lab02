@@ -19,6 +19,7 @@ class App extends React.Component {
 }
 
 handleCitySubmit = async (event) => {
+    console.log("🚀 ~ file: App.js:22 ~ handleCitySubmit= ~ handleCitySubmit:", handleCitySubmit)
     event.preventDefault();
 
     try {
@@ -54,13 +55,14 @@ handleCitySubmit = async (event) => {
 };
 
 handleCityInput = (event) => {
+    console.log("🚀 ~ file: App.js:58 ~ handleCityInput:", handleCityInput)
     this.setState({
         city: event.target.value,
     });
 };
 
 render(); {
-
+    
     return (
 
         <>
