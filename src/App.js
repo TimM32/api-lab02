@@ -19,7 +19,7 @@ class App extends React.Component {
 }
 
 handleCitySubmit = async (event) => {
-    console.log("🚀 ~ file: App.js:22 ~ handleCitySubmit= ~ handleCitySubmit:", handleCitySubmit)
+    // console.log("🚀 ~ file: App.js:22 ~ handleCitySubmit= ~ handleCitySubmit:", handleCitySubmit)
     event.preventDefault();
 
     try {
