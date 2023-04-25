@@ -57,7 +57,7 @@ handleCityInput = (event) => {
     this.setState({
         city: event.target.value,
     });
-}
+};
 
 render() {
 
@@ -72,13 +72,13 @@ render() {
             ) : (
                 <ul>{this.state.cityData}</ul>
             )}
-            <form onSubmit={this.handleCitySubmit}>
+            <Form onSubmit={this.handleCitySubmit}>
                 <label>
                     Choose City:
                     <input type="text" onChange={this.handleCityInput} />
                 </label>
                 <Button type="submit">Find Cities</Button>
-            </form>
+            </Form>
             <Card className="location-cards" id='location'>
                 <Card.body>
                     <Card.Title>Enjoy {this.state.city}!</Card.Title>
@@ -94,10 +94,11 @@ render() {
 
 
         </>
-    );
-
-
+    )
 }
+
+
+
 
 
 
