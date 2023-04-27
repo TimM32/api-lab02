@@ -5,8 +5,23 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            weatherData: {};
-            
+            weatherData: {},
+
         }
+    }
+
+
+
+    handleInput = (event) => {
+        this.setState({
+            weatherType: event.target.value
+
+        })
+    };
+
+
+    weatherSubmit = async (event) => {
+        event.preventDefault();
+        let url = 
     }
 }
