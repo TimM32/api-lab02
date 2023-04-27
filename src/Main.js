@@ -20,6 +20,7 @@ class Main extends React.Component {
       locationLon: "",
       locationMap: "",
       displayMap: false,
+      weatherData: [],
     };
   }
 
@@ -47,7 +48,7 @@ class Main extends React.Component {
         locationLon: locationLon,
         displayMap: true,
       });
-      this.displayWeather(cityInfo.data[0].lat,cityInfo.data[0].lon);
+      this.displayWeather(cityInfo.data[0].lat, cityInfo.data[0].lon);
     } catch (error) {
       this.setState({
         displayMap: false,
@@ -57,44 +58,34 @@ class Main extends React.Component {
     }
   };
 
+  displayWeather = async (lat, lon) => {
+    //url to the server
+    // console.log(lat, lon, "from our new weather function?");
+    let weatherResponse = await axios.get(
+      `${process.env.REACT_APP_SERVER}/weather?`,
+      {
+        params: {
+          latitude: lat,
+          longitude: lon,
+          searchQueryCity: this.state.city,
+        },
+      }
+    );
+    // console.log(weatherResponse.data);
+    //handle the server response
 
-displayWeather = async (lat, lon) => {
-//url to the server
-console.log(lat, lon, 'from our new weather function?')
-let url = await axios.get(`${process.env.REACT_APP_SERVER}/weather?`,
- { 
-   params: 
-   {
-    latitude: lat,
-    longitude: lon, 
-    searchQueryCity: this.state.city
-  }});
-console.log(url);
-//handle the server response
+    //update state
+    this.setState({
+      weatherData : weatherResponse.data,
+    });
 
-//update state
-
-//add the render below for the weather. 
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //add the render below for the weather.
+  };
 
   render() {
     // console.log('BBBBBB',this.state.city);
     console.log(this.state.locationLat);
+    console.log('from state',this.state.weatherData);
     return (
       <>
         <Container fluid>
