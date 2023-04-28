@@ -6,6 +6,7 @@ import LatLon from "./LatLon";
 import CitySearch from "./CitySearch";
 import Map from "./Map";
 import axios from "axios";
+import Weather from "./Weather.js";
 console.log(process.env.REACT_APP_LOCATION_KEY);
 
 class Main extends React.Component {
@@ -20,6 +21,7 @@ class Main extends React.Component {
       locationLon: "",
       locationMap: "",
       displayMap: false,
+      weatherData: [],
     };
   }
 
@@ -56,9 +58,25 @@ class Main extends React.Component {
     }
   };
 
+  displayWeather = async (lat, lon) => {
+    //url to server
+    let weatherResponse = await axios.get(`${process.env.REACT_APP_SERVER}/weather?`,
+        {
+            params: {
+                latitude: lat,
+                longitude: lon,
+                searchQuery: this.state.city
+            }
+        });
+    this.setState({
+        weatherData: weatherResponse.data,
+    });
+    //add render below for the weather.
+};
+
   render() {
     // console.log('BBBBBB',this.state.city);
-    console.log(this.state.locationLat);
+    console.log(this.state.locationLat, this.state.weatherData);
     return (
       <>
         <Container fluid>
