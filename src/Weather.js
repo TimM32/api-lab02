@@ -1,27 +1,23 @@
 import React from 'react';
 import axios from 'axios';
+import WeatherInfo from './WeatherInfo.js'
 
-class App extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            weatherData: {},
-
-        }
+class Weather extends React.Component{
+    
+    render(){
+        return(
+            <>
+            <div id='CurrentWeather'>
+                <h2>Weather:</h2>
+                {this.props.weatherData.map((date, index) +> {
+                    return <WeatherInfo key={index} day={date}/>
+                })
+                }
+            </div>
+            </>
+        )
     }
+    
 
 
-
-    handleInput = (event) => {
-        this.setState({
-            weatherType: event.target.value
-
-        })
-    };
-
-
-    weatherSubmit = async (event) => {
-        event.preventDefault();
-        let url = 
-    }
 }
