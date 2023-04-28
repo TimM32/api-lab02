@@ -9,10 +9,10 @@ class Weather extends React.Component{
             <>
             <div id='CurrentWeather'>
                 <h2>Weather:</h2>
-                {this.props.weatherData.map((date, index) +> {
+                {this.props.weatherData.map((date, index) => {
                     return <WeatherInfo key={index} day={date}/>
                 })
-                }
+            }
             </div>
             </>
         )
@@ -21,3 +21,5 @@ class Weather extends React.Component{
 
 
 }
+
+export default Weather;

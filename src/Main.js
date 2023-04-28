@@ -92,6 +92,12 @@ class Main extends React.Component {
                   />
                 </Col>
               </Row>
+              <Row>
+                <Col>
+                <Weather weatherData={this.state.weatherData}
+                          forecast={this.state.forecast} />
+                </Col>
+              </Row>
             </>
           )}
         </Container>
