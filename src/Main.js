@@ -56,7 +56,7 @@ class Main extends React.Component {
       });
       this.dispalayWeather(cityInfo.data[0].lat, cityInfo.data[0].lon);
       let newCityNameForMovie = cityInfo.data[0].display_name.split(" ")[0];
-      let cityNameOnly = 
+      // let cityNameOnly = 
     } catch (error) {
       this.setState({
         displayMap: false,
