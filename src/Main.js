@@ -146,7 +146,7 @@ render() {
             </Row>
             <Row>
               <Col>
-              <Movie movieData={this.state.movieData} />
+                <Movie movieData={this.state.movieData} />
               </Col>
             </Row>
           </>
@@ -155,6 +155,6 @@ render() {
     </>
   );
 }
-}
+
 
 export default Main;
