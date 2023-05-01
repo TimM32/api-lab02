@@ -156,5 +156,7 @@ render() {
   );
 }
 
+}
 
 export default Main;
+
