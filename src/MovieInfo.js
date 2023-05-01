@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap'
 import './App.css'
 
 
-class MovieContent extends React.Component {
+class MovieInfo extends React.Component {
 
   render() {
 
@@ -22,4 +22,4 @@ class MovieContent extends React.Component {
   }
 }
 
-export default MovieContent;
+export default MovieInfo;
