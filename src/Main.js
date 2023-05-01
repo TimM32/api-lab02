@@ -46,7 +46,7 @@ class Main extends React.Component {
       let locationLat = cityInfo.data[0].lat;
       let locationLon = cityInfo.data[0].lon;
 
-      // console.log(cityInfo, locationLat,locationLon);
+      
       this.setState({
         cityName: cityInfo.data[0],
         error: false,
@@ -79,9 +79,9 @@ class Main extends React.Component {
     //add render below for the weather.
   };
 
-  displayMovie = asyne(searchQuery) => {
+  displayMovie = async (searchQuery) => {
   try {
-    const movieReturn = await.axios.get(`${process.env.REACT_APP_SERVER}/movie?`,
+    const movieReturn = await axios.get(`${process.env.REACT_APP_SERVER}/movie?`,
       {
         params: {
           searchQuery: this.state.city,
