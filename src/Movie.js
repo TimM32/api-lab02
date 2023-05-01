@@ -1,5 +1,5 @@
 import React from 'react';
-import MovieContent from './MovieInfo.js'
+import MovieInfo from './MovieInfo.js'
 import './App.css'
 
 
@@ -12,7 +12,7 @@ class Movie extends React.Component {
                 <h3>Movies: </h3>
                 {
                     this.props.movieData.map((date, index) => {
-                        return <MovieContent key={index} date={date}/>;
+                        return <MovieInfo key={index} date={date}/>;
                     })
                 }
             </>
