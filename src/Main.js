@@ -48,7 +48,7 @@ class Main extends React.Component {
 
       
       this.setState({
-        cityName: cityInfo.data[0],
+        city: cityInfo.data[0].display_name,
         error: false,
         locationLat: locationLat,
         locationLon: locationLon,
