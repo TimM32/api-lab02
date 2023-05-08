@@ -18,7 +18,7 @@ class Main extends React.Component {
     super(props);
     this.state = {
       city: "",
-      cityData: {},
+      cityData: [],
       error: false,
       errorMessage: "",
       locationLat: "",
@@ -45,8 +45,8 @@ class Main extends React.Component {
       let cityInfo = await axios.get(url);
       let locationLat = cityInfo.data[0].lat;
       let locationLon = cityInfo.data[0].lon;
+      console.log('we got 1', locationLat, locationLon);
 
-      
       this.setState({
         city: cityInfo.data[0].display_name,
         error: false,
@@ -54,9 +54,11 @@ class Main extends React.Component {
         locationLon: locationLon,
         displayMap: true,
       });
-      this.dispalayWeather(cityInfo.data[0].lat, cityInfo.data[0].lon);
+      this.displayWeather(cityInfo.data[0].lat, cityInfo.data[0].lon);
       let newCityNameForMovie = cityInfo.data[0].display_name.split(" ")[0];
-      // let cityNameOnly = 
+      // let cityNameOnly = newCityNameForMovie.slice(0, -1);
+
+      // this.displayMovie(cityNameOnly);
     } catch (error) {
       this.setState({
         displayMap: false,
@@ -67,13 +69,13 @@ class Main extends React.Component {
   };
 
   displayWeather = async (lat, lon) => {
-    //url to server
+    console.log('Weather tiiiimme' ,lat, lon);
     let weatherResponse = await axios.get(`${process.env.REACT_APP_SERVER}/weather?`,
       {
         params: {
           latitude: lat,
           longitude: lon,
-          searchQuery: this.state.city
+          // searchQuery: this.state.city
         }
       });
     this.setState({
@@ -83,8 +85,9 @@ class Main extends React.Component {
   };
 
   displayMovie = async (searchQuery) => {
+  console.log("Movie Tiiiiiime", searchQuery);
   try {
-    const movieReturn = await axios.get(`${process.env.REACT_APP_SERVER}/movie?`,
+    const movieResponse = await axios.get(`${process.env.REACT_APP_SERVER}/movie?`,
       {
         params: {
           searchQuery: this.state.city,

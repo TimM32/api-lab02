@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from 'react-bootstrap'
 import './App.css'
 
-class WeatheInfo extends React.Component {
+class WeatherInfo extends React.Component {
     render() {
         return (
             <>
@@ -18,4 +18,4 @@ class WeatheInfo extends React.Component {
 }
 
 
-export default WeatheInfo;
+export default WeatherInfo;
